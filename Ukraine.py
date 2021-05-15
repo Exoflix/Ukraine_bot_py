@@ -200,10 +200,15 @@ async def kick(ctx, user : discord.User, *reason):
     await ctx.guild.kick(user, reason = reason)
     await ctx.send(embed=test_e)
 
-@bot.command()
-async def say(ctx, *texte):
-    await ctx.send(" ".join(texte))
-    await ctx.message.delete()
+@bot.command(case_insensitive=True)
+async def say(ctx, saymsg=None):
+    if saymsg==None:
+        return await ctx.send("Merci d'écrire la phrase dont vous voulez que le bot répète")
+     
+    sayEmbed = discord.Embed(title=f"{ctx.author.name} Said", color = discord.Color.blue(), description=f"{saymsg}")
+    sayEmbed.timestamp = ctx.message.created_at
+    
+    await ctx.send(embed = sayEmbed)
 
 @bot.command()
 async def ukraineinfo(ctx):

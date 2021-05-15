@@ -367,6 +367,13 @@ async def nsfw(ctx):
     embed.set_image(url="https://img-hw.xvideos-cdn.com/videos/thumbs169poster/8b/33/23/8b3323a947c0482928de3a73cdda33ee/8b3323a947c0482928de3a73cdda33ee.22.jpg")
     await ctx.send(embed=embed)
 
+class Video:
+    def __init__(self, link):
+        video = ytdl.extract_info(link, download=False)
+        video_format = video["formats"][0]
+        self.url = video["webpage_url"]
+        self.stream_url = video_format["url"]
+
 @bot.command(pass_context=True, aliases=['j', 'joi'])
 async def join(ctx):
     channel = ctx.message.author.voice.channel

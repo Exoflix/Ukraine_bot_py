@@ -435,64 +435,35 @@ async def resume(ctx):
     test_e.set_author(name="Le morceau de musique a repris !")
     await ctx.send(embed=test_e)
 
-@bot.command(pass_context=True, aliases=['p', 'pla'])
-async def play(ctx, url: str):
-    channel = ctx.message.author.voice.channel
-    voice = get(bot.voice_clients, guild=ctx.guild)
+def play_song(client, queue, song):
+    source = discord.PCMVolumeTransformer(discord.FFmpegPCMAudio(song.stream_url
+        , before_options = "-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5"))
 
-    if voice and voice.is_connected():
-        await voice.move_to(channel)
+    def next(_):
+        if len(queue) > 0:
+            new_song = queue[0]
+            del queue[0]
+            play_song(client, queue, new_song)
+        else:
+            asyncio.run_coroutine_threadsafe(client.disconnect(), bot.loop)
+
+    client.play(source, after=next)
+
+
+@bot.command()
+async def play(ctx, url):
+    print("play")
+    client = ctx.guild.voice_client
+
+    if client and client.channel:
+        video = Video(url)
+        musics[ctx.guild].append(video)
     else:
-        voice = await channel.connect()
-
-    await voice.disconnect()
-
-    if voice and voice.is_connected():
-        await voice.move_to(channel)
-    else:
-        voice = await channel.connect()
-        print(f"Le bot est connécté au channel suivant {channel}\n")
-
-    await ctx.send(f"J'ai rejoins {channel}")
-    song_there = os.path.isfile("song.mp3")
-    try:
-        if song_there:
-            os.remove("song.mp3")
-            print("Suppression de l'ancien fichier audio")
-    except PermissionError:
-        print("Tantive de supprésion du fichier, malheureusement, il est en cours de lecture")
-        await ctx.send("Erreur : La musique est en cours de lecture")
-        return
-
-    await ctx.send("musique en cours de téléchargement")
-
-    voice = get(bot.voice_clients, guild=ctx.guild)
-
-    ydl_opts = {
-        'format': 'bestaudio/best',
-        'postprocessors': [{
-            'key': 'FFmpegExtractAudio',
-            'preferredcodec': 'mp3',
-            'preferredquality': '200',
-        }],
-    }
-
-    with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-        print("Téléchargement du son en cours\n")
-        ydl.download([url])
-
-    for file in os.listdir("./"):
-        if file.endswith(".mp3"):
-            name = file
-            print(f"Conversion du fichier: {file}\n")
-            os.rename(file, "song.mp3")
-
-    voice.play(discord.FFmpegPCMAudio("song.mp3"), after=lambda e: print("Musique prête"))
-    voice.source = discord.PCMVolumeTransformer(voice.source)
-    voice.source.volume = 0.70
-
-    nname = name.rsplit("-", 2)
-    await ctx.send(f"Je joue actuellement : {nname[0]}")
-    print("Je joue\n")
+        channel = ctx.author.voice.channel
+        video = Video(url)
+        musics[ctx.guild] = []
+        client = await channel.connect()
+        await ctx.send(f"Je lance : {video.url}")
+        play_song(client, musics[ctx.guild], video)
 
 bot.run("NzU5ODIyNTIxMzU2MjU1Mjgz.X3DF3Q.WGYmLEL8MOQ119jGZKEAHCFwmOc")

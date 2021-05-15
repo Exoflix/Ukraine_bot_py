@@ -12,6 +12,9 @@ from async_timeout import timeout
 from functools import partial
 from youtube_dl import YoutubeDL
 
+musics = {}
+ytdl = youtube_dl.YoutubeDL()
+
 bot = commands.Bot(command_prefix = "u!", description = "Ukrainebot")
 bot.remove_command('help')
 

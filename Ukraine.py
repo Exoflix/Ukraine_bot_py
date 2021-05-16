@@ -291,11 +291,6 @@ async def pack(ctx):
 
 #https://i.imgur.com/EMw71zI.png
 
-class avatar(commands.Cog):
-    def __init__(self, bot):
-        self.bot = bot
-
-
 @bot.command()
 async def avatar(self, ctx, member : discord.Member = None):
 

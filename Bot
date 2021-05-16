@@ -1,0 +1,24 @@
+@bot.command()
+async def hello(ctx):
+    await ctx.send("Hello ! ")
+
+
+@bot.command()
+async def load(ctx, name=None):
+    if name:
+        bot.load_extension(name)
+
+
+@bot.command()
+async def unload(ctx, name=None):
+    if name:
+        bot.unload_extension(name)
+
+
+@bot.command()
+async def reload(ctx, name=None):
+    if name:
+        try:
+            bot.reload_extension(name)
+        except:
+            bot.load_extension(name)

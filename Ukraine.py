@@ -12,7 +12,7 @@ from async_timeout import timeout
 from functools import partial
 from youtube_dl import YoutubeDL
 import youtube_dl
-import Cogs_de_reload
+import Cogs_reload
 
 bot = commands.Bot(command_prefix = "u!", description = "Ukrainebot")
 bot.remove_command('help')

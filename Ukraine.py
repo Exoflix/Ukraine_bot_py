@@ -15,6 +15,8 @@ from youtube_dl import YoutubeDL
 
 bot = commands.Bot(command_prefix = "u!", description = "Ukrainebot")
 bot.remove_command('help')
+musics = {}
+ytdl = youtube_dl.YoutubeDL()
 
 async def createMutedRole(ctx):
     mutedRole = await ctx.guild.create_role(name = "Muted",

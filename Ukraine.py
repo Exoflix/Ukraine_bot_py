@@ -291,25 +291,24 @@ async def pack(ctx):
 
 #https://i.imgur.com/EMw71zI.png
 
+class avatar(commands.Cog):
+    def __init__(self, bot):
+        self.bot = bot
+
+
 @bot.command()
-async def pp(ctx, member : discord.Member = None):
-    author = ctx.message.author
+async def avatar(self, ctx, member : discord.Member = None):
 
-    if member is None:
+	if member is None:
+            embed = discord.Embed(title="This command is used like this: ```+avatar [member]```", colour=0xff0000, timestamp=ctx.message.created_at)
+            await ctx.send(embed=embed)
+            return
 
-        test_e = discord.Embed(
-        colour=discord.Colour.dark_grey()
-        )
-        test_e.set_image(url=member.avatar_url)
-        await ctx.send(embed=test_e)
-
-    elif member is False:
-    
-        test_c = discord.Embed(
-            colour=discord.Colour.blurple()
-        )
-        test_c.set_image(url=author.avatar_url)
-        await ctx.send(embed=test_c)
+	else:
+     	    embed2 = discord.Embed(title=f"{member}'s Avatar!", colour=0x0000ff, timestamp=ctx.message.created_at)
+            embed2.add_field(name="Animated?", value=member.is_avatar_animated())
+            embed2.set_image(url=member.avatar_url)
+            await ctx.send(embed=embed2)
 
 @bot.command()
 async def covid(ctx, *, countryName = None):

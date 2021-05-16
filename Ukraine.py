@@ -12,6 +12,7 @@ from async_timeout import timeout
 from functools import partial
 from youtube_dl import YoutubeDL
 import youtube_dl
+import Cogs_de_reload
 
 bot = commands.Bot(command_prefix = "u!", description = "Ukrainebot")
 bot.remove_command('help')
@@ -476,4 +477,5 @@ async def play(ctx, url):
         await ctx.send(f"Je lance : {video.url}")
         play_song(client, musics[ctx.guild], video)
 
+bot.add_cog(Cogs_de_reload.CogOwner(bot))
 bot.run("NzU5ODIyNTIxMzU2MjU1Mjgz.X3DF3Q.WGYmLEL8MOQ119jGZKEAHCFwmOc")

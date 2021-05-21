@@ -247,7 +247,7 @@ async def guide(ctx):
     test_e = discord.Embed(
         colour=discord.Colour.blue()
     )
-    test_e.add_field(name="Guide officiel de l'alliance : YoHRa", value="Ce guide t'aidera à découvrir le serveur pas à pas, sans difficultés et sans que tu te perdes. Il a été développé par : Langou (Suprême leader des USA Pink).", inline=False)
+    test_e.add_field(name="Guide officiel de l'alliance : YoRHa", value="Ce guide t'aidera à découvrir le serveur pas à pas, sans difficultés et sans que tu te perdes. Il a été développé par : Langou (Suprême leader des USA Pink).", inline=False)
     test_e.add_field(name="Adresse du Guide :", value="http://myreader.toile-libre.org/uploads/My_5ff48d12a2e20.pdf")
     test_e.set_footer(text="Cordialement : Gérant des informations d'Ukraine", icon_url=bot.user.avatar_url)
     test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
@@ -260,7 +260,7 @@ async def pack(ctx):
     test_e = discord.Embed(
         colour=discord.Colour.blue()
     )
-    test_e.add_field(name="Pack officiel d'alliance : YoHRa", value="Ce pack a été développé par l'alliance, YoHRa, dans le but de permettre, même aux plus petits Pc, de pouvoir lancer NationsGlory sans lags. (Cela dépend aussi de la puissance de votre PC. Sur certains par exemple, la différence de fps ne sera pas plus visible que sur d'autres !", inline=False)
+    test_e.add_field(name="Pack officiel d'alliance : YoHRa", value="Ce pack a été développé par l'alliance, YoRHa, dans le but de permettre, même aux plus petits Pc, de pouvoir lancer NationsGlory sans lags. (Cela dépend aussi de la puissance de votre PC. Sur certains par exemple, la différence de fps ne sera pas plus visible que sur d'autres !", inline=False)
     test_e.add_field(name="Adresse du Pack :", value="https://www.mediafire.com/file/z1r1nxd4q5nubne/YoRHa+Pack+16x16+NoLag.rar/file")
     test_e.set_footer(text="Cordialement : Gérant des informations d'Ukraine", icon_url=bot.user.avatar_url)
     test_e.set_author(name=f"{author}", icon_url=author.avatar_url)

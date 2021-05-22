@@ -361,4 +361,14 @@ async def nsfw(ctx):
     embed.set_image(url="https://img-hw.xvideos-cdn.com/videos/thumbs169poster/8b/33/23/8b3323a947c0482928de3a73cdda33ee/8b3323a947c0482928de3a73cdda33ee.22.jpg")
     await ctx.send(embed=embed)
 
+@bot.command()
+async def lukrainecdelamerde(ctx):
+    author = ctx.message.author
+
+    test_e = discord.Embed(
+        colour=discord.Colour.orange()
+    )
+    test_e.set_author(name="Tellement putain, tous des chômeurs... TFOUUU")
+    await ctx.send(embed=test_e)
+
 bot.run("NzU5ODIyNTIxMzU2MjU1Mjgz.X3DF3Q.WGYmLEL8MOQ119jGZKEAHCFwmOc")

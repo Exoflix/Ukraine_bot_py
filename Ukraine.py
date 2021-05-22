@@ -28,6 +28,25 @@ async def createMutedRole(ctx):
         await channel.set_permissions(mutedRole, send_messages = False, speak = False)
     return mutedRole
 
+async def on_message(self, message):
+	def _check(m):
+		return (m.author == message.author
+				and len(m.mentions)
+				and (datetime.utcnow()-m.created_at).seconds < 60)
+
+	if not message.author.bot:
+		if len(list(filter(lambda m: _check(m), self.bot.cached_messages))) >= 3:
+			await message.channel.send("Don't spam mentions!", delete_after=10)
+			unmutes = await self.mute_members(message, [message.author], 5, reason="Mention spam")
+
+			if len(unmutes):
+				await sleep(5)
+				await self.unmute_members(message.guild, [message.author])
+
+		elif profanity.contains_profanity(message.content):
+			await message.delete()
+			await message.channel.send("You can't use that word here.", delete_after=10)
+
 async def getMutedRole(ctx):
     roles = ctx.guild.roles
     for role in roles:

@@ -13,7 +13,7 @@ from functools import partial
 from youtube_dl import YoutubeDL
 import youtube_dl
 
-bot = commands.Bot(command_prefix = "u!", description = "Ukrainebot")
+bot = commands.Bot(command_prefix = "y!", description = "YoRHaBot")
 bot.remove_command('help')
 musics = {}
 ytdl = youtube_dl.YoutubeDL()
@@ -65,7 +65,7 @@ async def mute(ctx, member : discord.Member, *, reason = "Aucune raison n'a ét�
         colour=discord.Colour.magenta()
     )
     test_e.add_field(name=f"{member.name} a été mute !", value="Merci de ne pas le mentionner durant son mute")
-    test_e.set_footer(text="Cordialement : Gérant des informations d'Ukraine", icon_url=bot.user.avatar_url)
+    test_e.set_footer(text="YoRHa", icon_url=bot.user.avatar_url)
     test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
     test_e.set_thumbnail(url = "https://i.imgur.com/sOHZQZI.png")
     await ctx.send(embed=test_e)
@@ -81,7 +81,7 @@ async def unmute(ctx, member : discord.Member, *, reason = "Aucune raison n'a é
         colour=discord.Colour.magenta()
     )
     test_e.add_field(name=f"{member.name} a été unmute !", value="Ne refait pas la même bétise", inline=False)
-    test_e.set_footer(text="Cordialement : Gérant des informations d'Ukraine", icon_url=bot.user.avatar_url)
+    test_e.set_footer(text="YoRHa", icon_url=bot.user.avatar_url)
     test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
     test_e.set_thumbnail(url = "https://i.imgur.com/7NieAyC.png")
     await ctx.send(embed=test_e)
@@ -134,7 +134,7 @@ async def help(ctx):
     test_e.add_field(name="Commandes", value="Help, serveurinfo, coucou, proute, say, pp", inline=False)
     test_e.add_field(name="Commandes musique", value="play, leave, skip, join ", inline=False)
     test_e.add_field(name="Commandes Pays", value="ukraineinfo, nouveau, guide, pack", inline=False)
-    test_e.set_footer(text="Cordialement : Gérant des informations d'Ukraine", icon_url=bot.user.avatar_url)
+    test_e.set_footer(text="YoRHa", icon_url=bot.user.avatar_url)
     test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
     test_e.set_thumbnail(url = "https://i.imgur.com/QQ2w7CK.png")
     await ctx.send(embed=test_e)
@@ -170,7 +170,7 @@ async def serveurinfo(ctx):
     test_e.add_field(name="Nombre de salons :", value= f"Il y'a {numberOfVoiceChannels} salons vocaux et {numberOfTextChannels} salons textuels", inline=False)
     test_e.add_field(name="Membres :", value= f"Ce serveur possède {numberOfPerson} membres", inline=False)
     test_e.add_field(name="Description de serveur (si il y'en a)", value= f"{serverDescription}", inline=False)
-    test_e.set_footer(text="Cordialement : Gérant des informations d'Ukraine", icon_url=bot.user.avatar_url)
+    test_e.set_footer(text="YoRHa", icon_url=bot.user.avatar_url)
     test_e.set_thumbnail(url = "https://i.imgur.com/EMw71zI.png")
     test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
     await ctx.send(embed=test_e)
@@ -216,7 +216,7 @@ async def kick(ctx, user : discord.User, *reason):
         colour=discord.Colour.gold()
     )
     test_e.add_field(name=f"{user} a été kick du serveur par {author}", value=f"Raison : {reason}")
-    test_e.set_footer(text="Cordialement : Gérant des informations d'Ukraine", icon_url=bot.user.avatar_url)
+    test_e.set_footer(text="YoRHa", icon_url=bot.user.avatar_url)
     test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
     test_e.set_thumbnail(url = "https://i.imgur.com/APyQzZX.png")
     await ctx.guild.kick(user, reason = reason)
@@ -232,32 +232,32 @@ async def say(ctx, saymsg=None):
     
     await ctx.send(embed = sayEmbed)
 
-@bot.command()
-async def ukraineinfo(ctx):
-    author = ctx.message.author
+#@bot.command()
+#async def ukraineinfo(ctx):
+#    author = ctx.message.author
+#
+#    test_e = discord.Embed(
+#        colour=discord.Colour.gold()
+#    )
+#    test_e.add_field(name="Informations relatives à l'Ukraine", value=":flag_ua: | L'Ukraine est un Pays Libre. Elle possède ses règles, ses choix et ne prend exemple sur personne. Pour être un pays UNIQUE ! L'Ukraine fait parti de l'alliance de la YoHRa ! Une alliance LIBRE, FIER et PROTECTRICE. Si tu es nouveau dans le pays, je t'invite à executer la commande | u!nouveau | ", inline=False)
+#    test_e.set_footer(text="Cordialement : Gérant des informations d'Ukraine", icon_url=bot.user.avatar_url)
+#    test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
+#    await ctx.send(embed=test_e)
 
-    test_e = discord.Embed(
-        colour=discord.Colour.gold()
-    )
-    test_e.add_field(name="Informations relatives à l'Ukraine", value=":flag_ua: | L'Ukraine est un Pays Libre. Elle possède ses règles, ses choix et ne prend exemple sur personne. Pour être un pays UNIQUE ! L'Ukraine fait parti de l'alliance de la YoHRa ! Une alliance LIBRE, FIER et PROTECTRICE. Si tu es nouveau dans le pays, je t'invite à executer la commande | u!nouveau | ", inline=False)
-    test_e.set_footer(text="Cordialement : Gérant des informations d'Ukraine", icon_url=bot.user.avatar_url)
-    test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
-    await ctx.send(embed=test_e)
-
-@bot.command()
-async def nouveau(ctx):
-    author = ctx.message.author
-
-    test_e = discord.Embed(
-        colour=discord.Colour.gold()
-    )
-    test_e.add_field(name="Informations pour les nouveaux", value=":flag_ua: | Bienvenue en Ukraine !  ", inline=False)
-    test_e.add_field(name="Petite synthèse", value=" Tu es désormais soumis aux règles en Ukraine ! Mais pas d'inquiétude, car en effet nous ne sommes pas très strict. Le but en Ukraine c'est que les membres soient librent de leurs choix. Tu n'auras donc pas tant à t'inquiéter. Je t'invite à prendre contact avec le Leader de l'Ukraine (Exoflix) ou avec un officier. Notre but, c'est de t'intégrer un maximum dans le serveur. Aucun membre ne doit être délaissé. Tout le monde a une place importante dans le serveur !  ", inline=False)
-    test_e.add_field(name="Voici le Guide officiel de l'alliance qui t'aidera tout le long de ton aventure :", value="http://myreader.toile-libre.org/uploads/My_5ff48d12a2e20.pdf")
-    test_e.set_footer(text="Cordialement : Gérant des informations d'Ukraine", icon_url=bot.user.avatar_url)
-    test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
-    test_e.set_thumbnail(url = "https://i.imgur.com/839jIs2.png")
-    await ctx.send(embed=test_e)
+#@bot.command()
+#async def nouveau(ctx):
+#    author = ctx.message.author
+#
+#    test_e = discord.Embed(
+#        colour=discord.Colour.gold()
+#    )
+#    test_e.add_field(name="Informations pour les nouveaux", value=":flag_ua: | Bienvenue en Ukraine !  ", inline=False)
+#    test_e.add_field(name="Petite synthèse", value=" Tu es désormais soumis aux règles en Ukraine ! Mais pas d'inquiétude, car en effet nous ne sommes pas très strict. Le but en Ukraine c'est que les membres soient librent de leurs choix. Tu n'auras donc pas tant à t'inquiéter. Je t'invite à prendre contact avec le Leader de l'Ukraine (Exoflix) ou avec un officier. Notre but, c'est de t'intégrer un maximum dans le serveur. Aucun membre ne doit être délaissé. Tout le monde a une place importante dans le serveur !  ", inline=False)
+#    test_e.add_field(name="Voici le Guide officiel de l'alliance qui t'aidera tout le long de ton aventure :", value="http://myreader.toile-libre.org/uploads/My_5ff48d12a2e20.pdf")
+#    test_e.set_footer(text="YoRHa", icon_url=bot.user.avatar_url)
+#    test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
+#    test_e.set_thumbnail(url = "https://i.imgur.com/839jIs2.png")
+#    await ctx.send(embed=test_e)
 
 @bot.command()
 async def guide(ctx):
@@ -266,9 +266,9 @@ async def guide(ctx):
     test_e = discord.Embed(
         colour=discord.Colour.blue()
     )
-    test_e.add_field(name="Guide officiel de l'alliance : YoRHa", value="Ce guide t'aidera à découvrir le serveur pas à pas, sans difficultés et sans que tu te perdes. Il a été développé par : Langou (Suprême leader des USA Pink).", inline=False)
+    test_e.add_field(name="Guide de l'alliance", value="**Guide non mis à jour**, il se peut que certains craft où autre solutions ne soient plus à jour...", inline=False)
     test_e.add_field(name="Adresse du Guide :", value="http://myreader.toile-libre.org/uploads/My_5ff48d12a2e20.pdf")
-    test_e.set_footer(text="Cordialement : Gérant des informations d'Ukraine", icon_url=bot.user.avatar_url)
+    test_e.set_footer(text="YoRHa", icon_url=bot.user.avatar_url)
     test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
     await ctx.send(embed=test_e)
 
@@ -279,9 +279,9 @@ async def pack(ctx):
     test_e = discord.Embed(
         colour=discord.Colour.blue()
     )
-    test_e.add_field(name="Pack officiel d'alliance : YoHRa", value="Ce pack a été développé par l'alliance, YoRHa, dans le but de permettre, même aux plus petits Pc, de pouvoir lancer NationsGlory sans lags. (Cela dépend aussi de la puissance de votre PC. Sur certains par exemple, la différence de fps ne sera pas plus visible que sur d'autres !", inline=False)
+    test_e.add_field(name="Pack officiel d'alliance : YoHRa", value="Ce pack a été développé Langou (ancien Suprême Leader YoRHa). Le pack est vérifié et complètement sécurisé. (Attention quand vous téléchagez des packs, pensez bien à toujours vérifié la source :upside_down:", inline=False)
     test_e.add_field(name="Adresse du Pack :", value="https://www.mediafire.com/file/z1r1nxd4q5nubne/YoRHa+Pack+16x16+NoLag.rar/file")
-    test_e.set_footer(text="Cordialement : Gérant des informations d'Ukraine", icon_url=bot.user.avatar_url)
+    test_e.set_footer(text="YoRHa", icon_url=bot.user.avatar_url)
     test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
     await ctx.send(embed=test_e)
 
@@ -314,7 +314,7 @@ async def pack(ctx):
 async def avatar(self, ctx, member : discord.Member = None):
 
         if member is None:
-            embed = discord.Embed(title="This command is used like this: ```+avatar [member]```", colour=0xff0000, timestamp=ctx.message.created_at)
+            embed = discord.Embed(title="Pour utiliser la commande, veuillez procéder comme suit : ```+avatar [member]```", colour=0xff0000, timestamp=ctx.message.created_at)
             await ctx.send(embed=embed)
             return
 
@@ -371,23 +371,4 @@ async def covid(ctx, *, countryName = None):
         await ctx.send(embed=embed3)
 
 
-@bot.command()
-async def nsfw(ctx):
-    
-    embed = discord.Embed(
-    colour=discord.Colour.blue()
-    )          
-    embed.set_image(url="https://img-hw.xvideos-cdn.com/videos/thumbs169poster/8b/33/23/8b3323a947c0482928de3a73cdda33ee/8b3323a947c0482928de3a73cdda33ee.22.jpg")
-    await ctx.send(embed=embed)
-
-@bot.command()
-async def lukrainecdelamerde(ctx):
-    author = ctx.message.author
-
-    test_e = discord.Embed(
-        colour=discord.Colour.orange()
-    )
-    test_e.set_author(name="Tellement putain, tous des chômeurs... TFOUUU")
-    await ctx.send(embed=test_e)
-
-bot.run("NzU5ODIyNTIxMzU2MjU1Mjgz.X3DF3Q.WGYmLEL8MOQ119jGZKEAHCFwmOc")
+bot.run("ODkzMTgwNzQxMzk4MTg4MDgz.YVXtYw.zSLAAGhT2BGE0gZZP7Yy8Yu1Gf4")

@@ -131,9 +131,10 @@ async def help(ctx):
         colour=discord.Colour.orange()
     )
     test_e.set_author(name="Le prefix du bot est = u!")
-    test_e.add_field(name="Commandes", value="Help, serveurinfo, coucou, proute, say, pp", inline=False)
-    test_e.add_field(name="Commandes musique", value="play, leave, skip, join ", inline=False)
-    test_e.add_field(name="Commandes Pays", value="ukraineinfo, nouveau, guide, pack", inline=False)
+    test_e.add_field(name="Commandes", value="Help, serveurinfo, coucou, say", inline=False)
+    test_e.add_field(name="Commandes musique", value="Soon... les commandes musique. Soon... :o", inline=False)
+    test_e.add_field(name="Commandes Alliance", value="guide, pack", inline=False)
+    test_e.add_field(name="Info", value="Bêta 0.1_DYB", inline=False)
     test_e.set_footer(text="YoRHa", icon_url=bot.user.avatar_url)
     test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
     test_e.set_thumbnail(url = "https://i.imgur.com/QQ2w7CK.png")
@@ -174,10 +175,6 @@ async def serveurinfo(ctx):
     test_e.set_thumbnail(url = "https://i.imgur.com/EMw71zI.png")
     test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
     await ctx.send(embed=test_e)
-
-@bot.command()
-async def proute(ctx):
-    await ctx.send("et pet")
 
 @bot.command()
 @commands.has_permissions(manage_messages = True)

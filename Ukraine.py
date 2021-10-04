@@ -369,5 +369,15 @@ async def covid(ctx, *, countryName = None):
         embed3.set_author(name="Erreur !")
         await ctx.send(embed=embed3)
 
+@bot.command()
+async def pays(ctx):
+    author = ctx.message.author
+
+    test_e = discord.Embed(
+        colour=discord.Colour.orange()
+    )
+    test_e.add_field(name="Liste des pays de l'alliance", value="Aucune donnée d'entrée pour le moment... En attente de la liste officiel des pays faisant partie de l'alliance . . .", inline=False)
+    await ctx.send(embed=test_e)
+
 
 bot.run("ODkzMTgwNzQxMzk4MTg4MDgz.YVXtYw.zSLAAGhT2BGE0gZZP7Yy8Yu1Gf4")

@@ -265,7 +265,7 @@ async def guide(ctx):
     test_e = discord.Embed(
         colour=discord.Colour.blue()
     )
-    test_e.add_field(name="Guide de l'alliance", value="**Guide non mis à jour**, il se peut que certains craft où autre solutions ne soient plus à jour...", inline=False)
+    test_e.add_field(name="Guide de l'alliance", value="**Guide non à jour**, il se peut que certains craft où autre solutions ne soient plus à jour...", inline=False)
     test_e.add_field(name="Adresse du Guide :", value="http://myreader.toile-libre.org/uploads/My_5ff48d12a2e20.pdf")
     test_e.set_footer(text="YoRHa", icon_url=bot.user.avatar_url)
     test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
@@ -278,7 +278,7 @@ async def pack(ctx):
     test_e = discord.Embed(
         colour=discord.Colour.blue()
     )
-    test_e.add_field(name="Pack officiel d'alliance : YoHRa", value="Pack officiel de l'alliance (YoRHa). Le pack est vérifié et est complètement sécurisé. Ce pack peut aider certains utilisateurs à réduire les lags, parfait pour le PvP ! *(Attention quand vous téléchagez des packs, pensez bien à toujours vérifié la source :upside_down:)*", inline=False)
+    test_e.add_field(name="Pack officiel d'alliance : YoRHa", value="Pack officiel de l'alliance (YoRHa). Le pack est vérifié et est complètement sécurisé. Ce pack peut aider certains utilisateurs à réduire les lags, parfait pour le PvP ! *(Attention quand vous téléchagez des packs, pensez bien à toujours vérifié la source :upside_down:)*", inline=False)
     test_e.add_field(name="Adresse du Pack :", value="https://mega.nz/file/zktgXDxS#5wzwqYogIhtK96HF-z_z6tX2d2dfgi46aEdM2IZ3I7U")
     test_e.set_footer(text="YoRHa", icon_url=bot.user.avatar_url)
     test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
@@ -389,4 +389,50 @@ async def maj(ctx):
     test_e.add_field(name="Mise à jour FBêta_1.32 du 07/10/21 ", value="Ajout des commandes modération : ***kick, ban, unban, mute et unmute***. Ajout futur de nouvelles commandes d'alliance ?...", inline=False)
     await ctx.send(embed=test_e)
 
+@bot.command()
+async def maj(ctx):
+	author = ctx.message.author
+
+    test_e = discord.Embed(
+        colour=discord.Colour.blurple()
+    )
+    test_e.add_field(name="Mise à jour FBêta_1.32 du 07/10/21 ", value="Ajout des commandes modération : ***kick, ban, unban, mute et unmute***. Ajout futur de nouvelles commandes d'alliance ?...", inline=False)
+    await ctx.send(embed=test_e)
+
+
+@bot.command()
+async def ally(ctx):
+    author = ctx.message.author
+
+    test_e = discord.Embed(
+        colour=discord.Colour.blue()
+    )
+    test_e.add_field(name="Adresse du post forum de l'alliance :", value="https://nationsglory.fr/forums/thread/yorha.2025")
+    test_e.set_footer(text="YoRHa", icon_url=bot.user.avatar_url)
+    test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
+    await ctx.send(embed=test_e)
+
+@bot.command()
+async def mp(ctx, *, args=None):
+	if args !=None:
+		members = ctx.guild.members
+		    author = ctx.message.author
+
+    		    test_e = discord.Embed(
+                        colour=discord.Colour.blue()
+    		    )
+		for member in members:
+			try:
+				test_e.add_field(name="Erreur :", value=(args))
+    				test_e.set_footer(text="YoRHa", icon_url=bot.user.avatar_url)
+    				test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
+				await ctx.send(embed=test_e)
+			except:
+				print("Es-tu sûr d'avoir bien taper la commande ????")
+	else:
+		test_e.add_field(name="Erreur :", value="Merci d'écrire ce que tu veux que j'envoie à tout les membres de ce serveur :Issouserious:")
+    		test_e.set_footer(text="YoRHa", icon_url=bot.user.avatar_url)
+    		test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
+		await ctx.send(embed=test_e)
+		
 bot.run("ODkzMTgwNzQxMzk4MTg4MDgz.YVXtYw.zSLAAGhT2BGE0gZZP7Yy8Yu1Gf4")

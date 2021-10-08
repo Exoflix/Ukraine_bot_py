@@ -392,7 +392,7 @@ async def maj(ctx):
 @bot.command()
 async def maj(ctx):
 	author = ctx.message.author
-
+    
     test_e = discord.Embed(
         colour=discord.Colour.blurple()
     )

@@ -403,27 +403,27 @@ async def ally(ctx):
     test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
     await ctx.send(embed=test_e)
 
-@bot.command()
-async def mp(ctx, *, args=None):
-	if args !=None:
-		members = ctx.guild.members
-		author = ctx.message.author
-
-    			test_e = discord.Embed(
-        		    colour=discord.Colour.blue()
-    			)
-		for member in members:
-			try:
-				test_e.add_field(name="Erreur :", value=(args))
-    				test_e.set_footer(text="YoRHa", icon_url=bot.user.avatar_url)
-    				test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
-				await ctx.send(embed=test_e)
-			except:
-				print("Es-tu sûr d'avoir bien taper la commande ????")
-	else:
-		test_e.add_field(name="Erreur :", value="Merci d'écrire ce que tu veux que j'envoie à tout les membres de ce serveur :Issouserious:")
-    		test_e.set_footer(text="YoRHa", icon_url=bot.user.avatar_url)
-    		test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
-		await ctx.send(embed=test_e)
+#@bot.command()
+#async def mp(ctx, *, args=None):
+#	if args !=None:
+#		members = ctx.guild.members
+#		author = ctx.message.author
+#
+#    			test_e = discord.Embed(
+#        		    colour=discord.Colour.blue()
+#    			)
+#		for member in members:
+#			try:
+#				test_e.add_field(name="Erreur :", value=(args))
+#    				test_e.set_footer(text="YoRHa", icon_url=bot.user.avatar_url)
+#    				test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
+#				await ctx.send(embed=test_e)
+#			except:
+#				print("Es-tu sûr d'avoir bien taper la commande ????")
+#	else:
+#		test_e.add_field(name="Erreur :", value="Merci d'écrire ce que tu veux que j'envoie à tout les membres de ce serveur :Issouserious:")
+#		test_e.set_footer(text="YoRHa", icon_url=bot.user.avatar_url)
+#    		test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
+#		await ctx.send(embed=test_e)
 		
 bot.run("ODkzMTgwNzQxMzk4MTg4MDgz.YVXtYw.zSLAAGhT2BGE0gZZP7Yy8Yu1Gf4")

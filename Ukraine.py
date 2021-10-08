@@ -389,16 +389,6 @@ async def maj(ctx):
     test_e.add_field(name="Mise à jour FBêta_1.32 du 07/10/21 ", value="Ajout des commandes modération : ***kick, ban, unban, mute et unmute***. Ajout futur de nouvelles commandes d'alliance ?...", inline=False)
     await ctx.send(embed=test_e)
 
-@bot.command()
-async def maj(ctx):
-	author = ctx.message.author
-    
-    test_e = discord.Embed(
-        colour=discord.Colour.blurple()
-    )
-    test_e.add_field(name="Mise à jour FBêta_1.32 du 07/10/21 ", value="Ajout des commandes modération : ***kick, ban, unban, mute et unmute***. Ajout futur de nouvelles commandes d'alliance ?...", inline=False)
-    await ctx.send(embed=test_e)
-
 
 @bot.command()
 async def ally(ctx):

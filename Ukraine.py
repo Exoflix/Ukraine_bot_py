@@ -430,4 +430,16 @@ async def avatar(ctx, member: discord.Member=None):
 
     await ctx.send(embed = avatarEmbed)
 		
+@bot.command()
+async def ally(ctx):
+    author = ctx.message.author
+
+    test_e = discord.Embed(
+        colour=discord.Colour.blue()
+    )
+    test_e.add_field(name="Résumé de la réunion du 09/10", value="En attente du passage de la réunion...")
+    test_e.set_footer(text="YoRHa", icon_url=bot.user.avatar_url)
+    test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
+    await ctx.send(embed=test_e)
+
 bot.run("ODkzMTgwNzQxMzk4MTg4MDgz.YVXtYw.zSLAAGhT2BGE0gZZP7Yy8Yu1Gf4")

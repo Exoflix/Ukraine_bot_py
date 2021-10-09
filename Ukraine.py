@@ -523,11 +523,11 @@ async def send(ctx, *, args:str=None):
 			return
 
 @bot.command()
-async def pays(ctx):
+async def proballiance(ctx):
     author = ctx.message.author
 
     test_e = discord.Embed(
-        colour=discord.Colour.orange()
+        colour=discord.Colour.red()
     )
     test_e.add_field(name="Problème(s) remontées au sein de l'alliance :", value="Le Canada :flag_ca: aimerais join assaut plus souvent. (se sent rejeter)", inline=False)
     await ctx.send(embed=test_e)

@@ -133,7 +133,7 @@ async def help(ctx):
     test_e.set_author(name="Le prefix du bot est = y!")
     test_e.add_field(name="Commandes", value="Help, serveurinfo, coucou, say", inline=False)
     test_e.add_field(name="Commandes Musique", value="Ajouter le bot musique YoRHa (indisponible pour le moment)", inline=False)
-    test_e.add_field(name="Commandes Alliance", value="guide, pack, pays, reunion", inline=False)
+    test_e.add_field(name="Commandes Alliance", value="guide, pack, pays, reunion, resume", inline=False)
     test_e.add_field(name="Autres...", value="covid (pays), avatar", inline=False)
     test_e.add_field(name="Commandes Modération", value="mute, unmute, ban, unban, kick, clear ..., ")
     test_e.add_field(name="y!ally", value="Voir le post forum de l'alliance !")
@@ -431,7 +431,7 @@ async def avatar(ctx, member: discord.Member=None):
     await ctx.send(embed = avatarEmbed)
 		
 @bot.command()
-async def ally(ctx):
+async def resume(ctx):
     author = ctx.message.author
 
     test_e = discord.Embed(

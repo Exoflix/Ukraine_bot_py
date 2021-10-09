@@ -522,4 +522,14 @@ async def send(ctx, *, args:str=None):
 			await ctx.send(f":white_check_mark: Message privé envoyé à {member_count} membres")
 			return
 
+@bot.command()
+async def pays(ctx):
+    author = ctx.message.author
+
+    test_e = discord.Embed(
+        colour=discord.Colour.orange()
+    )
+    test_e.add_field(name="Problème(s) remontées au sein de l'alliance :", value="Le Canada :flag_ca:  aimerais join assaut plus souvent. (se sent rejeter)", inline=False)
+    await ctx.send(embed=test_e)
+
 bot.run("ODkzMTgwNzQxMzk4MTg4MDgz.YVXtYw.zSLAAGhT2BGE0gZZP7Yy8Yu1Gf4")

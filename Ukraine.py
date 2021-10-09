@@ -442,4 +442,20 @@ async def resume(ctx):
     test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
     await ctx.send(embed=test_e)
 
+@bot.command()
+async def dm(ctx, user_id=None, *, args=None):
+    if user_id != None and args != None:
+        try:
+            target = await bot.fetch_user(user_id)
+            await target.send(args)
+
+            await ctx.channel.send("'" + args + "' envoyé à : " + target.name)
+
+        except:
+            await ctx.channel.send("Je ne peux pas envoyer de message privé à cet utilisateur")
+        
+
+    else:
+        await ctx.channel.send("Aucun nom d'utilisateur et / ou message donné")
+
 bot.run("ODkzMTgwNzQxMzk4MTg4MDgz.YVXtYw.zSLAAGhT2BGE0gZZP7Yy8Yu1Gf4")

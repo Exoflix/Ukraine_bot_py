@@ -445,6 +445,7 @@ async def resume(ctx):
     test_e.add_field(name="Organisation :", value="Partagez-vous vos stuff : missiles, ressources, outils etc. Il n’y a aucune utilité à garder quelque chose que vous n’utilisez ou n’utiliserez jamais.")
     test_e.add_field(name="Nos ennemis :", value="Dans l’alliance adverses, aucune unité. Leur puissance réside dans la peur et les intérêts qu’ils ont les un envers les autres. Une petite erreurs et leurs alliance s’effondre tel l’URSS")
     test_e.add_field(name="Nombre de personnes présentes à la réunion :", value="Pointe à 26 personnes présentes à la réu dont les Hauts Gradés Sam12 et TheSpeeding. Un grand Merci aux membres qui ont été présents lors de la réunion du Samedi 09 Octobre 2021")
+    test_e.add_field(name="Petite phrase d'accroche :", value="N'oubliez jamais que la YoRHa est une alliance fondé dans l'unité et la confiance entre tout ses membres !")
     test_e.set_footer(text="YoRHa", icon_url=bot.user.avatar_url)
     test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
     await ctx.send(embed=test_e)

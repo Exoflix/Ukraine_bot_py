@@ -419,12 +419,14 @@ async def avatar(ctx, member: discord.Member=None):
     
     icon_url = member.avatar_url 
  
-    avatarEmbed = discord.Embed(title = f"{member.name}\'s Avatar", color = 0xFFA500)
+    avatarEmbed = discord.Embed(title = f"Voici l'avatar de {member.name}", color = 0xFFA500)
  
     avatarEmbed.set_image(url = f"{icon_url}")
  
     avatarEmbed.timestamp = ctx.message.created_at 
  
+    avatarEmbed.set_footer(text="YoRHa", icon_url=bot.user.avatar_url)
+
     await ctx.send(embed = avatarEmbed)
 		
 bot.run("ODkzMTgwNzQxMzk4MTg4MDgz.YVXtYw.zSLAAGhT2BGE0gZZP7Yy8Yu1Gf4")

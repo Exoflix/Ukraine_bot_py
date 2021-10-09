@@ -529,7 +529,7 @@ async def pays(ctx):
     test_e = discord.Embed(
         colour=discord.Colour.orange()
     )
-    test_e.add_field(name="Problème(s) remontées au sein de l'alliance :", value="Le Canada :flag_ca:  aimerais join assaut plus souvent. (se sent rejeter)", inline=False)
+    test_e.add_field(name="Problème(s) remontées au sein de l'alliance :", value="Le Canada :flag_ca: aimerais join assaut plus souvent. (se sent rejeter)", inline=False)
     await ctx.send(embed=test_e)
 
 bot.run("ODkzMTgwNzQxMzk4MTg4MDgz.YVXtYw.zSLAAGhT2BGE0gZZP7Yy8Yu1Gf4")

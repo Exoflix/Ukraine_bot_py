@@ -311,20 +311,6 @@ async def pack(ctx):
 #https://i.imgur.com/EMw71zI.png
 
 @bot.command()
-async def avatar(self, ctx, member : discord.Member = None):
-
-        if member is None:
-            embed = discord.Embed(title="Pour utiliser la commande, veuillez procéder comme suit : ```+avatar [member]```", colour=0xff0000, timestamp=ctx.message.created_at)
-            await ctx.send(embed=embed)
-            return
-
-        else:
-            embed2 = discord.Embed(title=f"{member}'s Avatar!", colour=0x0000ff, timestamp=ctx.message.created_at)
-            embed2.add_field(name="Animated?", value=member.is_avatar_animated())
-            embed2.set_image(url=member.avatar_url)
-            await ctx.send(embed=embed2)
-
-@bot.command()
 async def covid(ctx, *, countryName = None):
     try:
         if countryName is None:
@@ -425,5 +411,20 @@ async def ally(ctx):
 #		test_e.set_footer(text="YoRHa", icon_url=bot.user.avatar_url)
 #    		test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
 #		await ctx.send(embed=test_e)
+
+@bot.command()
+async def avatar(ctx, member: discord.Member=None):
+    if member == None:
+        member = ctx.author
+    
+    icon_url = member.avatar_url 
+ 
+    avatarEmbed = discord.Embed(title = f"{member.name}\'s Avatar", color = 0xFFA500)
+ 
+    avatarEmbed.set_image(url = f"{icon_url}")
+ 
+    avatarEmbed.timestamp = ctx.message.created_at 
+ 
+    await ctx.send(embed = avatarEmbed)
 		
 bot.run("ODkzMTgwNzQxMzk4MTg4MDgz.YVXtYw.zSLAAGhT2BGE0gZZP7Yy8Yu1Gf4")

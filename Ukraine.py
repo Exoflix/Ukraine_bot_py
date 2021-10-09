@@ -17,7 +17,6 @@ bot = commands.Bot(command_prefix = "y!", description = "YoRHaBot")
 bot.remove_command('help')
 musics = {}
 ytdl = youtube_dl.YoutubeDL()
-log_dms = config["log_dms"]
 
 async def createMutedRole(ctx):
     mutedRole = await ctx.guild.create_role(name = "Muted",

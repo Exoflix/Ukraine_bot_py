@@ -432,7 +432,7 @@ async def avatar(ctx, member: discord.Member=None):
 		
 @bot.command()
 @commands.has_permissions(manage_messages = True)
-async def resume(ctx):
+async def marchepas(ctx):
     author = ctx.message.author
 
     test_e = discord.Embed(

@@ -548,4 +548,4 @@ async def reunion(ctx):
     test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
     await ctx.send(embed=test_e)
 
-bot.run("ODkzMTgwNzQxMzk4MTg4MDgz.YVXtYw.f9BTzR1pXib_We6lNuib4GJfzI0")
+bot.run("ODkzMTgwNzQxMzk4MTg4MDgz.YVXtYw.4P0bcslNpzSc_C2U6EfDfXrnx8U")

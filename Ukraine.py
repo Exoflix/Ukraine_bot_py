@@ -133,12 +133,12 @@ async def help(ctx):
     test_e.set_author(name="Le prefix du bot est = y!")
     test_e.add_field(name="Commandes", value="Help, serveurinfo, coucou, say", inline=False)
     test_e.add_field(name="Commandes Musique", value="Ajouter le bot musique YoRHa (indisponible pour le moment)", inline=False)
-    test_e.add_field(name="Commandes Alliance", value="guide, pack, pays, reunion, resume", inline=False)
+    test_e.add_field(name="Commandes Alliance", value="guide, pack, pays, reunion, resume, probleme", inline=False)
     test_e.add_field(name="Autres...", value="covid (pays), avatar", inline=False)
     test_e.add_field(name="Commandes Modération", value="mute, unmute, ban, unban, kick, clear ..., ")
     test_e.add_field(name="y!ally", value="Voir le post forum de l'alliance !")
     test_e.add_field(name="Annonces importantes :", value="Aucune pour le moment...")
-    test_e.add_field(name="Bot", value="Version :0.5_DYBot", inline=False)
+    test_e.add_field(name="Bot", value="Version :0.7_DYBot | Mise à jour le 10/10/21 à 12h01", inline=False)
     test_e.set_footer(text="YoRHa", icon_url=bot.user.avatar_url)
     test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
     test_e.set_thumbnail(url = "https://i.imgur.com/QQ2w7CK.png")
@@ -431,6 +431,7 @@ async def avatar(ctx, member: discord.Member=None):
     await ctx.send(embed = avatarEmbed)
 		
 @bot.command()
+@commands.has_permissions(manage_messages = True)
 async def resume(ctx):
     author = ctx.message.author
 
@@ -523,13 +524,28 @@ async def send(ctx, *, args:str=None):
 			return
 
 @bot.command()
-async def proballiance(ctx):
+async def probleme(ctx):
     author = ctx.message.author
 
     test_e = discord.Embed(
         colour=discord.Colour.red()
     )
     test_e.add_field(name="Problème(s) remontées au sein de l'alliance :", value="Le Canada :flag_ca: aimerais join assaut plus souvent. (se sent rejeter)", inline=False)
+    test_e.add_field(name="Rappel :", value="Si vous avez des soucis à faire remonter aux hauts gradés de l'alliance, mentionner un membre des Officiers Fondateurs de l'alliance afin que votre problème soit étudié et qu'une solution soit trouvé !", inline=False)
+    test_e.set_footer(text="YoRHa", icon_url=bot.user.avatar_url)
+    test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
+    await ctx.send(embed=test_e)
+
+@bot.command()
+async def reunion(ctx):
+    author = ctx.message.author
+
+    test_e = discord.Embed(
+        colour=discord.Colour.red()
+    )
+    test_e.add_field(name="Date de la prochaine réunion :", value="Aucune réunion n'est prévu à ce jour...", inline=False)
+    test_e.set_footer(text="YoRHa", icon_url=bot.user.avatar_url)
+    test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
     await ctx.send(embed=test_e)
 
 bot.run("ODkzMTgwNzQxMzk4MTg4MDgz.YVXtYw.f9BTzR1pXib_We6lNuib4GJfzI0")

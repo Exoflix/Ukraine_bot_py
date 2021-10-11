@@ -364,7 +364,7 @@ async def pays(ctx):
     test_e = discord.Embed(
         colour=discord.Colour.orange()
     )
-    test_e.add_field(name="Liste des pays de l'alliance", value="Aucune donnée d'entrée pour le moment... En attente de la liste officiel des pays faisant partie de l'alliance . . .", inline=False)
+    test_e.add_field(name="Liste des pays de l'alliance", value=":flag_ir: Iran, :flag_us: États-Unis, :flag_bs: Bahamas, :flag_ca: Canada, :flag_gt: Guatemala, :flag_mt: Malte, :flag_ph: Philippines, :flag_pr: Porto Rico, :flag_white: Sakhaline, :flag_th: Thaïlande, :flag_ua: Ukraine, :flag_bt: Bhoutan, :flag_gy: Guyana, :flag_tt: Trinité-et-tobago, :flag_ve: Venezuela, :flag_re: La Réunion, :flag_cf: Centre-Afrique, :flag_br: Brésil, :flag_gf: Guyane, :flag_ug: Ouganda, :flag_tw: Taïwan", inline=False)
     await ctx.send(embed=test_e)
 
 @bot.command()

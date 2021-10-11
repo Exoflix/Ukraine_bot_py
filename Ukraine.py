@@ -365,7 +365,7 @@ async def pays(ctx):
         colour=discord.Colour.orange()
     )
     test_e.add_field(name="Liste des pays de l'alliance", value=":flag_ir: Iran, :flag_us: États-Unis, :flag_bs: Bahamas, :flag_ca: Canada, :flag_gt: Guatemala, :flag_mt: Malte, :flag_ph: Philippines, :flag_pr: Porto Rico, :flag_white: Sakhaline, :flag_th: Thaïlande, :flag_ua: Ukraine, :flag_bt: Bhoutan, :flag_gy: Guyana, :flag_tt: Trinité-et-tobago, :flag_ve: Venezuela, :flag_re: La Réunion, :flag_cf: Centre-Afrique, :flag_br: Brésil, :flag_gf: Guyane, :flag_ug: Ouganda, :flag_tw: Taïwan", inline=False)
-    test_e.add_field(name="Info :", value="*Si votre pays ne figue pas dans la liste ci-dessus, merci de contacter Exoflix / CrèmeBrûlée pour demander l'ajout de celui-ci.*", inline=False)
+    test_e.add_field(name="Info :", value="*Si votre pays ne figure pas dans la liste ci-dessus, merci de contacter Exoflix / CrèmeBrûlée pour demander l'ajout de celui-ci.*", inline=False)
     test_e.set_footer(text="YoRHa", icon_url=bot.user.avatar_url)
     test_e.set_author(name=f"{author}", icon_url=author.avatar_url)
     await ctx.send(embed=test_e)
